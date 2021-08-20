@@ -1,0 +1,82 @@
+body{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.container{
+    margin: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+}
+.image{
+    height: 30rem;
+}
+
+.image img{
+    padding: 1rem;
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin-left: auto;
+
+}
+.configuration{
+    padding: 1rem;
+}
+
+#mac-title{
+    margin-top: 0px;
+}
+
+.sub-title{
+    margin-bottom: 5px;
+}
+.button{
+    padding: 10px 14px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+.button:hover{
+    background-color: lightsteelblue;
+    cursor: pointer;
+}
+
+.cost-calculation{
+    margin-left: 25%;
+}
+
+table{
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+th, td{
+    border-bottom: 1px solid rgb(187, 180, 180);
+}
+th{
+    text-align: left;
+}
+.total-price{
+    border-bottom: 1px solid;
+}
+
+.pomo-title{
+    margin-bottom: 5px;
+}
+.pomo-btn{
+    margin-left: 5px;
+    padding: 4px 7px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.pomo-btn:hover{
+    background-color: lightsteelblue;
+}
+#total-after-discount{
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+}
