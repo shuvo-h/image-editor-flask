@@ -39,54 +39,54 @@
                         <!-- Offered Memody  -->
                         <div>
                             <h3 class="sub-title">Memory</h3>
-                            <button class="button" type="submit">8GB unified memory</button>
-                            <button class="button" type="submit">16GB unified memory</button>
+                            <button id="8GB-memory" class="button" type="submit">8GB unified memory</button>
+                            <button id="16GB-memory" class="button" type="submit">16GB unified memory</button>
                         </div>
                         <!-- Offered SSD Storage  -->
                         <div>
                             <h3 class="sub-title">Storage</h3>
-                            <button class="button" type="submit">256GB SSD storage</button>
-                            <button class="button" type="submit">512GB SSD storage</button>
-                            <button class="button" type="submit">1TB SSD storage</button>
+                            <button id="256GB-ssd" class="button" type="submit">256GB SSD storage</button>
+                            <button id="512GB-ssd" class="button" type="submit">512GB SSD storage</button>
+                            <button id="1TB-ssd" class="button" type="submit">1TB SSD storage</button>
                         </div>
                             <!-- Delivery options  -->
                         <div>
                             <h3 class="sub-title">Choose your delivery option</h3>
-                            <button class="button" type="submit">Friday, Aug 25 FREE Prime Delivery</button>
-                            <button class="button" type="submit">Friday, Aug 21 Delivery charge $20</button>
+                            <button id="delivery-25th" class="button" type="submit">Friday, Aug 25 FREE Prime Delivery</button>
+                            <button id="delivery-21th" class="button" type="submit">Friday, Aug 21 Delivery charge $20</button>
                         </div>
                     </div>
                     <div class="cost-calculation">
                         <table>
                             <tr>
                                 <th>Best Price</th>
-                                <td>$00</td>
+                                <td>$<span id="best-price">1299</span></td>
                             </tr>
                             <tr>
                                 <th>Extra Memory Cost</th>
-                                <td>$00</td>
+                                <td>$<span id="extra-memory">0</span></td>
                             </tr>
                             <tr>
                                 <th>Extra Storage Cost</th>
-                                <td>$00</td>
+                                <td>$<span id="extra-storage-cost">0</span></td>
                             </tr>
                             <tr>
                                 <th class="total-price">Delivery charge</th>
-                                <td class="total-price">$00</td>
+                                <td class="total-price">$<span id="delivery-charge">0</span></td>
                             </tr>
                             <tr>
                                 <th>Total Price</th>
-                                <td>$00</td>
+                                <td>$<span id="total-price">1299</span></td>
                             </tr>
                         </table>
                         <p class="pomo-title">Add Pomo code</p>
-                        <input type="text">
-                        <button class="pomo-btn" type="submit">Apply</button>
+                        <input id="pomo-code" type="text">
+                        <button id="pomo-btn" class="pomo-btn" type="submit">Apply</button>
                     </div>
                 </div>
             </div>
             <hr>
-            <p id="total-after-discount">Total: $00</p>
+            <p id="total-after-discount">Total: $<span id="total">1299</span></p>
         </section>
     </main>
 
