@@ -2,6 +2,8 @@ body{
     margin-left: 2rem;
     margin-right: 2rem;
 }
+
+/* divide the and style the container  */
 .container{
     margin: 1rem;
     padding: 1rem;
@@ -9,6 +11,8 @@ body{
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
 }
+
+/* style the image part  */
 .image{
     height: 30rem;
 }
@@ -21,6 +25,8 @@ body{
     margin-left: auto;
 
 }
+
+/* style the configuration part  */
 .configuration{
     padding: 1rem;
 }
@@ -35,15 +41,17 @@ body{
 .button{
     padding: 10px 14px;
     margin-right: 10px;
-    border: none;
+    border-color: white;
     border-radius: 8px;
 }
 
 .button:hover{
     background-color: lightsteelblue;
     cursor: pointer;
+    border-color:gray;
 }
 
+/* style the cost calculation part  */
 .cost-calculation{
     margin-left: 25%;
 }
@@ -59,21 +67,31 @@ th, td{
 th{
     text-align: left;
 }
-.total-price{
+
+td{
+    text-align: right;
+}
+.delivery-fee{
     border-bottom: 1px solid;
 }
 
+/* style the pomo code */
 .pomo-title{
     margin-bottom: 5px;
 }
-.pomo-btn{
+#pomo-btn{
+    width: 5rem;
     margin-left: 5px;
     padding: 4px 7px;
     border-radius: 5px;
     cursor: pointer;
+    background-color: rgb(177, 198, 226);
+    /* color: white; */
 }
-.pomo-btn:hover{
-    background-color: lightsteelblue;
+#pomo-btn:hover{
+    background-color: lightgreen;
+    /* color: white; */
+    border-color: white;
 }
 #total-after-discount{
     text-align: center;

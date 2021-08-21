@@ -3,7 +3,7 @@ function getId(idName) {
     const idElement = document.getElementById(idName);
     return idElement;
 }
-// getting Id innerText
+// getting innerText of ID
 function getInnerText(idName) {
     // get the id by calling getID function 
     const targetId = getId(idName);
@@ -18,12 +18,11 @@ function memoryPrice(memory) {
     }else{
         extraMemoryCost.innerText = '180';
     }
-
+    // update the toal cost 
     totalCost();
 }
 
 // function to get Storage Cost 
-
 function storagePrice(ssd) {
     const extraStorageCost = getId('extra-storage-cost');
     if (ssd == '256GB') {
@@ -34,6 +33,7 @@ function storagePrice(ssd) {
         extraStorageCost.innerText = '180';
     }
 
+    // update the toal cost 
     totalCost();
 }
 
@@ -49,22 +49,28 @@ function deliveryCharge(date) {
             deliveryCostId.innerText = '20';
             break;
     
-        default:   //Do I really need to write this line?
+        default:
+            // Nothing to do here just break the loop 
             break;
     }
+
+    // update the toal cost 
     totalCost();
 }
 
 // total cost calculation 
 function totalCost() {
+    // get integer value of all cost 
     const bestPrice = parseInt(getInnerText('best-price'));
     const memoryCost = parseInt(getInnerText('extra-memory'));
     const storageCost = parseInt(getInnerText('extra-storage-cost'));
     const deliveryCost = parseInt(getInnerText('delivery-charge'));
 
-    const totalCostId = getId('total-price');
-
+    // summation of all cost 
     const totalPrice = bestPrice + memoryCost + storageCost + deliveryCost;
+    
+    // Update the total price 
+    const totalCostId = getId('total-price');
     totalCostId.innerText = totalPrice;
 
     // display the total without pomo discount 
@@ -77,16 +83,18 @@ function pomoDiscount() {
     const totalId = getId('total');
 
     // verify pomo code 
-    const pomoValue = getId('pomo-code').value;
+    const pomoField = getId('pomo-code');
+    const pomoValue = pomoField.value;
     const pomoCode = pomoValue.toLowerCase();
     if (pomoCode == 'stevekaku') {
-        const total = (totalPrice*80)/100;
+        const total = totalPrice - ((totalPrice*20)/100);
         totalId.innerText = total;
+        pomoField.value = "";
     }
 
 }
 
-// Memory selection 
+// Event handler for memory
 document.getElementById('8GB-memory').addEventListener('click',function () {
    memoryPrice('8GB');
 })
@@ -94,7 +102,7 @@ document.getElementById('16GB-memory').addEventListener('click',function () {
    memoryPrice('16GB');
 })
 
-// Storage selection 
+// Event handler for storage
 document.getElementById('256GB-ssd').addEventListener('click', function () {
     storagePrice('256GB');
 })
@@ -105,7 +113,7 @@ document.getElementById('1TB-ssd').addEventListener('click', function () {
     storagePrice('1TB');
 })
 
-// Choose delivery date 
+// Event handler for delivery date 
 document.getElementById('delivery-25th').addEventListener('click',function () {
     deliveryCharge('25th');
 })
@@ -114,7 +122,7 @@ document.getElementById('delivery-21th').addEventListener('click',function () {
 })
 
 
-
+// Event handler for pomo code 
 document.getElementById('pomo-btn').addEventListener('click',function () {
     pomoDiscount();
 })

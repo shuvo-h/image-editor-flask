@@ -56,6 +56,7 @@
                             <button id="delivery-21th" class="button" type="submit">Friday, Aug 21 Delivery charge $20</button>
                         </div>
                     </div>
+                    <!-- Cost based on chosen configuration  -->
                     <div class="cost-calculation">
                         <table>
                             <tr>
@@ -71,21 +72,23 @@
                                 <td>$<span id="extra-storage-cost">0</span></td>
                             </tr>
                             <tr>
-                                <th class="total-price">Delivery charge</th>
-                                <td class="total-price">$<span id="delivery-charge">0</span></td>
+                                <th class="delivery-fee">Delivery charge</th>
+                                <td class="delivery-fee">$<span id="delivery-charge">0</span></td>
                             </tr>
                             <tr>
                                 <th>Total Price</th>
                                 <td>$<span id="total-price">1299</span></td>
                             </tr>
                         </table>
+                        <!-- Pomo code to get discount  -->
                         <p class="pomo-title">Add Pomo code</p>
                         <input id="pomo-code" type="text">
-                        <button id="pomo-btn" class="pomo-btn" type="submit">Apply</button>
+                        <button id="pomo-btn" type="submit">Apply</button>
                     </div>
                 </div>
             </div>
             <hr>
+            <!-- Total final amount -->
             <p id="total-after-discount">Total: $<span id="total">1299</span></p>
         </section>
     </main>
