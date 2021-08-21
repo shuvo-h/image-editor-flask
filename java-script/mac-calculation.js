@@ -87,6 +87,7 @@ function pomoDiscount() {
     const pomoValue = pomoField.value;
     const pomoCode = pomoValue.toLowerCase();
     if (pomoCode == 'stevekaku') {
+        // reduce 20% of total cost 
         const total = totalPrice - ((totalPrice*20)/100);
         totalId.innerText = total;
         pomoField.value = "";
