@@ -1,5 +1,23 @@
+# .gitignore
+
+# Virtual environment
+venv/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Editor-specific files
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.idea/
+
+# Local configuration
 .env
+*.sqlite3
 .env.local
-node_modules
 build
 dist

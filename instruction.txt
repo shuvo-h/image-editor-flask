@@ -1,0 +1,11 @@
+refs:
+    Blueprints: https://www.youtube.com/watch?v=_LMiUOYDxzE   (channel name: NeuralNine)
+
+
+
+project start:
+    >> python -m venv venv          // to create virtual environment for a new project
+    >> .\venv\Scripts\activate      // start or activate the virtual environment of the project before start work each time
+    >> deactivate                   // stop the virtual environment each time after completing the task abd before shutdown VS code
+    >> pip list                     // show list of installed modules
+    
