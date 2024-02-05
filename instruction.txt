@@ -8,4 +8,8 @@ project start:
     >> .\venv\Scripts\activate      // start or activate the virtual environment of the project before start work each time
     >> deactivate                   // stop the virtual environment each time after completing the task abd before shutdown VS code
     >> pip list                     // show list of installed modules
+    >> pip install -r requirements.txt  // install the modules from file
+    >> flask run                    // to run the flas server
+
     
+
