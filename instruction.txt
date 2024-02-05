@@ -4,12 +4,19 @@ refs:
 
 
 project start:
-    >> python -m venv venv          // to create virtual environment for a new project
-    >> .\venv\Scripts\activate      // start or activate the virtual environment of the project before start work each time
-    >> deactivate                   // stop the virtual environment each time after completing the task abd before shutdown VS code
-    >> pip list                     // show list of installed modules
-    >> pip install -r requirements.txt  // install the modules from file
-    >> flask run                    // to run the flas server
+    >> python -m venv py_env_module             // to create virtual environment for a new project with name "py_env_module". don't commit to git
+    >> .\venv\Scripts\activate                  // start or activate the virtual environment of the project before start work each time
+    >> deactivate                               // stop the virtual environment each time after completing the task abd before shutdown VS code
+    >> pip list                                 // show list of installed modules
+    >> pip freeze > requirements.txt            // re-write all the dependency to requirements.txt file
+    >> pip install -r requirements.txt          // install the modules from file
+    >> flask run                                // to run the flas server
 
+
+external modules:
+    >>  pip install Flask 
+    >> pip install Flask-Login 
+    >> pip install flask-sqlalchemy
+    >> pip freeze > requirements.txt 
     
 
