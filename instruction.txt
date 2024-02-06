@@ -20,3 +20,29 @@ external modules:
     >> pip freeze > requirements.txt 
     
 
+
+
+// process to start a initial project : 
+1) install and create venv environment for modular installation
+    >> python -m venv py_env_module_folder_name         // eg. python -m venv py_module
+    >> .\venv\Scripts\activate                          // active the venv environment for workspace
+2) create requirements.txt file and add the dependencies 
+    >> pip install -r requirements.txt                      // install all dependencies
+        - Flask==3.0.2
+        - python-dotenv==1.0.1
+        - requests==2.26.0
+        - flask-sqlalchemy
+3) create .env or .flaskenv file and add the evn list
+        - FLASK_APP=main.py
+        - FLASK_RUN_PORT=5000
+        - FLASK_DEBUG=1
+4) create main.py file 
+    you could have multiple application inside the py module. import and call to run the app you want
+    eg. 
+        - from appModuleName import create_app
+        - app = create_app()
+        - if __name__ == '__main__' :
+            app.run(debug=True,port=8000)   // options are automatically pass from .env so no need to include here in app.run()
+    >> flask run                            // run the server
+
+
