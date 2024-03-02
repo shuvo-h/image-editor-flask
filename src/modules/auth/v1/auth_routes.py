@@ -6,7 +6,7 @@ from src.config.env_config import envs
 from src.config.db_config import db
 from src.modules.users.v1.user_model import User
 from functools import wraps
-from .auth_controller import register_userCtl
+from . import auth_controller
 import aiohttp
 from .auth_validation import validate_register_data
 
@@ -26,11 +26,17 @@ users = [
 @validate_register_data
 def register_user_route():
     body = request.get_json()
-    return register_userCtl(body)
+    return auth_controller.register_userCtl(body)
+
+@auth_bp.post('/login')
+@validate_register_data
+def login_user_route():
+    body = request.get_json()
+    return auth_controller.login_userCtl(body)
 
 
 # login a user
-@auth_bp.post("/login")
+@auth_bp.post("/login-demo")
 def loginRoute():
     bodyData = request.json
     print(bodyData)

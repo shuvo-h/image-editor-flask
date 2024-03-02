@@ -13,9 +13,10 @@ class User(db.Model):
     def set_password(self, plain_password):
         self.password = generate_password_hash(plain_password)
 
-    def check_password(self, plain_password):
-        return check_password_hash(self.password, plain_password)
+    def check_password(hashed_password, plain_password):
+        return check_password_hash(hashed_password, plain_password)
     
+    # printers methods
     def __str__(self):
         return f"User(id={self.id}, email={self.email})"
 
@@ -29,6 +30,7 @@ class User(db.Model):
             'password': self.password,
         }
     
+    # class methods 
     @classmethod
     def add_and_commit(cls, new_user):
         db.session.add(new_user)
