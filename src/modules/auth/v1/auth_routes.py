@@ -5,8 +5,12 @@ from . import auth_utils
 from src.config.env_config import envs
 from src.config.db_config import db
 from src.modules.users.v1.user_model import User
+from functools import wraps
+from .auth_controller import register_userCtl
+import aiohttp
+from .auth_validation import validate_register_data
 
-auth_bp_v1 = Blueprint("auth_v1",__name__)
+auth_bp = Blueprint("auth_v1",__name__)
 
 # Simulated user database
 users = [
@@ -15,8 +19,18 @@ users = [
 ]
 
 
+
+
+
+@auth_bp.post('/register')
+@validate_register_data
+def register_user_route():
+    body = request.get_json()
+    return register_userCtl(body)
+
+
 # login a user
-@auth_bp_v1.post("/login")
+@auth_bp.post("/login")
 def loginRoute():
     bodyData = request.json
     print(bodyData)
@@ -29,8 +43,9 @@ def loginRoute():
     
     for existUser in users:
         if (existUser['email'] == bodyData.get('email')) and  (existUser['password'] == bodyData.get('password')):
-            access_token = auth_utils.generate_token({'email': existUser["email"]}, envs['ACCESS_TOKEN_SECRET'])
-            refresh_token = auth_utils.generate_token({'email': existUser["email"]}, envs['REFRESH_TOKEN_SECRET'])
+            tokenPayload = {'email': existUser["email"]}
+            access_token = auth_utils.generate_token(tokenPayload, envs['ACCESS_TOKEN_SECRET'])
+            refresh_token = auth_utils.generate_token(tokenPayload, envs['REFRESH_TOKEN_SECRET'])
             
 
              # Create the response
@@ -61,7 +76,7 @@ def loginRoute():
 
 
 
-@auth_bp_v1.get("/me")
+@auth_bp.get("/me")
 def getMe():
     # Retrieve access token from cookies
     access_token = request.cookies.get('access_token')
@@ -80,7 +95,7 @@ def getMe():
 
 
 # insert a user 
-@auth_bp_v1.post("/add")
+@auth_bp.post("/add")
 def insertUser():
     bodyData = request.json
     password = bodyData.get('password')

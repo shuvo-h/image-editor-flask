@@ -1,4 +1,4 @@
-from src.modules.blueprints import version_one_blueprints
+from src.blueprints import version_one_blueprints
 
 
 

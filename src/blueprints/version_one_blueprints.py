@@ -11,6 +11,6 @@ blueprint_list = [
     },
     {
         "path": f"/api/{VERSIONS['V1']}/users",
-        "bluePrint": users.users_v1_bp
+        "bluePrint": users.user_v1_bp
     },
 ]
