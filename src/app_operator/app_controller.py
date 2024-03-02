@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from src.modules.blueprints import bp_manager
+from src.config import db_config
 
 def create_combined_app():
     app = Flask(__name__)
@@ -15,7 +16,7 @@ def create_combined_app():
     # configure_csp(app)
 
     # connect DB
-    print("Need to connect DB")
+    db_config.connectDb(app)
 
     # register all blueprints
     bp_manager.register_blueprints(app)
