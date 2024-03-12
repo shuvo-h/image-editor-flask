@@ -1,0 +1,42 @@
+Project Analysis:
+- User can register/Signup
+- One user will have multiple shop
+- They can build invoice form dynamically for each shop
+- Option to upload digiital signature
+- Search invoices based on, shop name, price range, paid/unpaid
+- Allow to edit invoice like add amount and change status to paid. 
+- Status: there will be a status system like 'approved', Once approved, the invoice information never editable.
+- In frontend, every user can build and design their own invoice form with their logo, shop address and invoice number dynamically.
+
+
+
+Data Model:
+User =>
+    id, 
+    email
+    phone
+    isDeleted
+
+Shop =>
+    id,
+    user_id,
+    shop_name,
+    address,
+        road & building,
+        post, 
+        contact number,
+        email,
+    logo_url,
+
+Invoice Template =>
+    id,
+    user_id,
+    shop_id,
+    // do frontend first to make the data structure for invoice
+
+
+
+
+Entity Relationship(ER) Diagram:
+Backend Setup:
+Frontend Setup:

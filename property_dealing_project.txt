@@ -1,0 +1,42 @@
+A property owner can keep their property in our platform.
+Buyers can bid on the property like Nilam.
+The height bid will win the property.
+
+facility:
+google coordinate of the property/land/home
+Image of the property
+Proper price for both parties through bidding
+No middle man
+
+To keep the property in our platform, you have to pay based on the high bid value as 1% of the high bid.
+It will be checked for each week, for a given week, if 1st of the job posting, the bid value is 50000, then have to pay 1%, if after 1week, we will check if the highest bid value is 70000, the user have to pay 1% of (70000-50000) else the project will be archieved
+
+
+User:
+    name,
+    email,
+    role,
+    phone_number,
+    avater,
+    address,
+    city,
+    country,
+
+
+property:
+    category,
+    title,
+    initial_bid,
+    city,
+    country,
+    address,
+    imgs:[],
+    description,
+
+bid:
+    property_id
+    owner_id
+    bidder_id
+    bid_amount
+    
+    

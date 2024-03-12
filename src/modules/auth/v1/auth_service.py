@@ -7,8 +7,17 @@ from src.config.env_config import envs
 
 
 def registerUserIntoDb(payload):
+    print(payload)
     email = payload.get('email')
     password = payload.get('password')
+    name = payload.get('name')
+    role = payload.get('role')
+    phone_number = payload.get('phone_number')
+    avater = payload.get('avater')
+    address = payload.get('address')
+    city = payload.get('city')
+    country = payload.get('country')
+    status = payload.get('status')
 
     # check if email already exist
     existing_user = User.query.filter_by(email=email).first()
@@ -17,12 +26,27 @@ def registerUserIntoDb(payload):
     
 
      # Create a new user instance
-    new_user = User(email=email, password=password)
+    new_user = User(
+        email=email, 
+        password=password, 
+        name=name,
+        role=role,
+        phone_number=phone_number,
+        avater=avater,
+        address=address,
+        city=city,
+        country=country,
+        status=status,
+    )
     
     User.add_and_commit(new_user)
 
     # cookies signin with access_token and refresh_token
-    token_payload = {'email': new_user.email, 'user_id': new_user.id}
+    token_payload = {
+        'email': new_user.email, 
+        'user_id': new_user.id,
+        'role': new_user.role,
+    }
     access_token = auth_utils.generate_token(token_payload, envs['ACCESS_TOKEN_SECRET'])
     refresh_token = auth_utils.generate_token(token_payload, envs['REFRESH_TOKEN_SECRET'])
 
